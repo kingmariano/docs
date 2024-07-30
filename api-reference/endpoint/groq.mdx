@@ -1,0 +1,135 @@
+---
+title: 'Chat completion using Groq Endpoint'
+sidebarTitle: "v1/groq/chatcompletion"
+api: 'POST v1/groq/chatcompletion'
+authMethod: "bearer"
+description: "Sends a request for chat completions. For more details on parameters, visit [Groq Cloud](https://console.groq.com/docs/api-reference#chat-create)."
+---
+
+### Request Body
+
+<ParamField body="messages" type="array" required>
+  Array of messages to send to the chat model.
+ <Expandable title="properties" type="object">
+ <ParamField body="role" type="string" required>
+  The role of the message sender (e.g., 'user' or 'assistant' or 'system').
+</ParamField>
+<ParamField body="content" type="string" required>
+  The content of the message.
+</ParamField>
+  </Expandable>
+ </ParamField>
+<ParamField body="model" type="string" required>
+ The [model](https://console.groq.com/docs/api-reference#models-list) to use for chat completion.
+</ParamField>
+<ParamField body="stream" type="boolean" >
+  Whether to stream the response or not.
+</ParamField>
+
+### 200 - Successful chat completion response
+
+<ResponseField name="id" type="string">
+  The unique identifier for the chat completion request.
+</ResponseField>
+<ResponseField name="object" type="string">
+  The type of the object returned, typically 'chat.completion'.
+</ResponseField>
+<ResponseField name="created" type="integer">
+  The timestamp of when the chat completion was created.
+</ResponseField>
+<ResponseField name="model" type="string">
+  The model used for generating the chat completion.
+</ResponseField>
+<ResponseField name="system_fingerprint" type="string">
+  Fingerprint of the system, if available.
+</ResponseField>
+<ResponseField name="choices" type="array">
+  The array of completion choices.
+ <Expandable title="properties" type="object">
+ <ResponseField name="index" type="integer">
+  The index of the choice.
+</ResponseField>
+<ResponseField name="message" type="object">
+  The message returned by the model.
+ <Expandable title="properties" type="object">
+ <ResponseField name="role" type="string">
+  The role of the message sender (e.g., 'assistant').
+</ResponseField>
+<ResponseField name="content" type="string">
+  The content of the message.
+</ResponseField>
+  </Expandable>
+ </ResponseField>
+<ResponseField name="finish_reason" type="string">
+  The reason the completion ended (e.g., 'stop').
+</ResponseField>
+<ResponseField name="logprobs" type="object">
+  Log probabilities of the tokens, if available.
+</ResponseField>
+  </Expandable>
+ </ResponseField>
+<ResponseField name="usage" type="object">
+  Usage statistics for the request.
+ <Expandable title="properties" type="object">
+ <ResponseField name="prompt_tokens" type="integer">
+  The number of tokens in the prompt.
+</ResponseField>
+<ResponseField name="completion_tokens" type="integer">
+  The number of tokens in the completion.
+</ResponseField>
+<ResponseField name="total_tokens" type="integer">
+  The total number of tokens used in the request.
+</ResponseField>
+<ResponseField name="prompt_time" type="float">
+  The time taken for the prompt processing.
+</ResponseField>
+<ResponseField name="completion_time" type="float">
+  The time taken for the completion processing.
+</ResponseField>
+<ResponseField name="total_time" type="float">
+  The total time taken for the request.
+</ResponseField>
+  </Expandable>
+ </ResponseField>
+
+### 400 - Error response
+
+<ResponseField name="error" type="string">
+  The error message explaining what went wrong.
+</ResponseField>
+
+<ResponseExample>
+```json 200
+{
+  "id": "34a9110d-c39d-423b-9ab9-9c748747b204",
+  "object": "chat.completion",
+  "created": 1708045122,
+  "model": "mixtral-8x7b-32768",
+  "system_fingerprint": null,
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Low latency Large Language Models (LLMs) are important in the field of artificial intelligence and natural language processing (NLP) for several reasons:\n\n1. Real-time applications: Low latency LLMs are essential for real-time applications such as chatbots, voice assistants, and real-time translation services. These applications require immediate responses, and high latency can lead to a poor user experience.\n\n2. Improved user experience: Low latency LLMs provide a more seamless and responsive user experience. Users are more likely to continue using a service that provides quick and accurate responses, leading to higher user engagement and satisfaction.\n\n3. Competitive advantage: In today's fast-paced digital world, businesses that can provide quick and accurate responses to customer inquiries have a competitive advantage. Low latency LLMs can help businesses respond to customer inquiries more quickly, potentially leading to increased sales and customer loyalty.\n\n4. Better decision-making: Low latency LLMs can provide real-time insights and recommendations, enabling businesses to make better decisions more quickly. This can be particularly important in industries such as finance, healthcare, and logistics, where quick decision-making can have a significant impact on business outcomes.\n\n5. Scalability: Low latency LLMs can handle a higher volume of requests, making them more scalable than high-latency models. This is particularly important for businesses that experience spikes in traffic or have a large user base.\n\nIn summary, low latency LLMs are essential for real-time applications, providing a better user experience, enabling quick decision-making, and improving scalability. As the demand for real-time NLP applications continues to grow, the importance of low latency LLMs will only become more critical."
+      },
+      "finish_reason": "stop",
+      "logprobs": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 24,
+    "completion_tokens": 377,
+    "total_tokens": 401,
+    "prompt_time": 0.009,
+    "completion_time": 0.774,
+    "total_time": 0.783
+  }
+}
+```
+```json 400
+{
+  "error": "error message"
+}
+```
+</ResponseExample>

@@ -1,0 +1,58 @@
+---
+title: 'Chat completion using G4F Endpoint'
+sidebarTitle: "v1/gpt4free"
+api: 'POST v1/gpt4free'
+authMethod: "bearer"
+description: "Sends a request for chat completions using the [g4f library](https://github.com/xtekky/gpt4free)"
+---
+### Request Body
+
+<ParamField body="messages" type="array" required>
+  Array of messages to send to the chat model.
+ <Expandable title="properties" type="object">
+ <ParamField body="role" type="string" required>
+  The role of the message sender (e.g., 'user' or 'assistant' or 'system').
+</ParamField>
+<ParamField body="content" type="string" required>
+  The content of the message.
+</ParamField>
+  </Expandable>
+ </ParamField>
+<ParamField body="model" type="string" default="gpt-4o">
+ The model could be `gpt-40`, `gpt-3.5-turbo` or `gpt-4`
+</ParamField>
+<ParamField body="stream" type="boolean" >
+  Whether to stream the response or not.
+</ParamField>
+<ParamField body="timeout" type="int" >
+  timeout for the response to be sent.
+</ParamField>
+<ParamField body="shuffle" type="boolean" default="false">
+  Shuffle the providers used for the chat completions. More details [here](https://github.com/xtekky/gpt4free/blob/main/docs/client.md)
+</ParamField>
+<ParamField body="image_url" type="string">
+  Include image for vision processing using the google gemini-pro model.
+</ParamField>
+
+### 200 - Successful chat completion response
+<ResponseField name="response" type="string">
+  Response Text.
+</ResponseField>
+
+### 400 - Error message
+<ResponseField name="error" type="string">
+  The error message explaining what went wrong.
+</ResponseField>
+
+<ResponseExample>
+```json 200
+{
+  "response": "Large language models like me are advanced artificial intelligence systems designed to understand and generate human language. These models are trained on vast amounts of text data to learn patterns and relationships within language, enabling them to perform various tasks such as text generation, translation, summarization, and more. They are characterized by their ability to handle complex language tasks and generate coherent responses based on the input they receive."
+}
+```
+```json 400
+{
+  "error": "error message"
+}
+```
+</ResponseExample>

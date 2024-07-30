@@ -1,0 +1,48 @@
+---
+title: 'Chat Completions'
+description: 'Learn how to Generate Chat Completions using the Omnicron API'
+icon: 'message'
+---
+<Card title="Chat Completions" icon="message" horizontal:True>
+  Leverage Omnicron's advanced AI capabilities to generate sophisticated chat responses. Powered by [**GROQ**](https://console.groq.com) AI models and the [**G4F**](https://github.com/xtekky/gpt4free) library, Omnicron ensures efficient and high-quality chat interactions.
+  <Note>Cost-effective and reliable.</Note>
+</Card>
+
+
+- **Using the GROQ Endpoint**:
+Navigate to the endpoint `/api/v1/grok/chatcompletion`.
+```sh curl
+curl -X POST http://localhost:9000/api/v1/groq/chatcompletion \
+  -H "Authorization: Bearer MY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "messages": [
+      {
+        "role": "user",
+        "content": "Explain the importance of fast language models"
+      }
+    ],
+    "model": "gpt-4o"
+  }'
+```
+<Info>For details about the parameters, visit the [groq reference page](/api-reference/endpoint/groq).</Info>
+
+- **Using the G4F Endpoint**:
+Navigate to the endpoint `/api/v1/gpt4free`.
+```sh curl
+curl -X POST http://localhost:9000/api/v1/gpt4free \
+  -H "Authorization: Bearer MY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "messages": [
+      {
+        "role": "user",
+        "content": "Explain the importance of fast language models"
+      }
+    ],
+    "model": "llama3-8b-8192"
+  }'
+```
+<Info>For details about the parameters, visit the [g4f reference page](/api-reference/endpoint/g4f).</Info>
+## Conclusion
+Both the GROQ and G4F endpoints provide robust solutions for generating chat completions using Omnicron's AI capabilities. Depending on your specific needs and preferences, you can choose either endpoint to integrate into your application. Feel free to explore both endpoints and consult the respective [API references](api-reference) for detailed information on parameters and usage.

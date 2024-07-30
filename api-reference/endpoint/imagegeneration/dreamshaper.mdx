@@ -1,0 +1,37 @@
+---
+title: 'Image Generation'
+sidebarTitle: 'v1/replicate/imagegeneration'
+api: 'POST v1/replicate/imagegeneration'
+authMethod: "bearer"
+description: "Image generation using the **lucataco/dreamshaper-xl-turbo** AI Model."
+---
+### Query
+<ParamField query="model" type="string" default="lucataco/dreamshaper-xl-turbo" required>
+  The image model to be used; 
+</ParamField>
+
+### Body
+<ParamField body="prompt" type="string" required>
+  Input prompt
+</ParamField>
+<ParamField body="width" type="int" default="1024">
+  Width of output image. Recommended 1024 or 1280
+</ParamField>
+<ParamField body="height" type="int" default="1024">
+  Height of output image. Recommended 1024 or 1280
+</ParamField>
+<ParamField body="scheduler" type="string" default="K_EULER">
+ scheduler
+</ParamField>
+<ParamField body="num_outputs" type="int" default="1">
+  Number of images to output.
+</ParamField>
+<ParamField body="guidance_scale" type="float" default="2.0">
+  Scale for classifier-free guidance. Recommended 7-8
+</ParamField>
+<ParamField body="negative_prompt" type="string" default="worst quality, low quality, bad anatomy, incorrect perspective" >
+  Negative Input prompt
+</ParamField>
+<ParamField body="num_inference_steps" type="int" default="6">
+  Number of denoising steps. 4 for best results
+</ParamField>

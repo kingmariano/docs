@@ -1,91 +1,125 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
-  "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
-  },
-  "favicon": "/favicon.svg",
+  "name": "Omnicron Docs",
+  "favicon": "/favicon.png",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
-    "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
+    "primary": "#2563eb",
+    "light": "#2563eb",
+    "dark": "#2563eb",
+    "background": {
+      "light": "#f0f0f0",
+      "dark": "#0B0E13"
     }
   },
   "topbarLinks": [
     {
-      "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "name": "Discord",
+      "url": "https://discord.com/channels/1265810179602120868/1265810180663152742"
     }
   ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "type": "github",
+    "url": "https://github.com/kingmariano/omnicron"
   },
   "tabs": [
     {
       "name": "API Reference",
       "url": "api-reference"
+    },
+    {
+      "name": "Contributing",
+      "url": "contributing"
+    },
+    {
+      "name": "Integrations",
+      "url": "integrations"
     }
   ],
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
+      "name": "Github",
+      "icon": "github",
+      "url": "https://github.com/kingmariano/omnicron"
     },
     {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
+      "name": "Issues",
+      "icon": "envelope",
+      "url": "https://github.com/kingmariano/omnicron/issues"
     },
     {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "name": "Join our Community",
+      "icon": "discord",
+      "url": "https://discord.com/channels/1265810179602120868/1265810180663152742"
     }
   ],
   "navigation": [
     {
       "group": "Get Started",
-      "pages": [
+        "pages": [
         "introduction",
-        "quickstart",
-        "development"
+        {
+          "group": "Quick Start",
+
+          "pages": [
+            "get-started/quick-start/requirements",
+            "get-started/quick-start/installation"
+          ]
+        }
       ]
     },
     {
-      "group": "Essentials",
+      "group": "Features",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "features/chatcompeletion",
+        "features/imagegeneration"
       ]
     },
     {
-      "group": "API Documentation",
-      "pages": [
-        "api-reference/introduction"
-      ]
+      "group": "API Endpoints",
+      "pages": ["api-reference/authentication"]
     },
     {
       "group": "Endpoint Examples",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "api-reference/endpoint/groq",
+        "api-reference/endpoint/g4f",
+        {
+        "group": "Image Generation",
+         "pages": [
+          "api-reference/endpoint/Imagegeneration/intro",
+          "api-reference/endpoint/imagegeneration/bytedance",
+          "api-reference/endpoint/imagegeneration/realvisxlv20",
+          "api-reference/endpoint/imagegeneration/playgroundai",
+          "api-reference/endpoint/imagegeneration/dreamshaper",
+          "api-reference/endpoint/imagegeneration/astra"
+        ]
+        }
       ]
+    },
+    {
+      "group": "Contributing",
+      "pages": ["contributing/introduction"]
+    },
+    {
+      "group": "Integrations",
+      "pages": ["integrations/integrations"]
     }
   ],
+  "feedback": {
+    "thumbsRating": true,
+    "raiseIssue": true,
+    "suggestEdit": true
+  },
+  "api": {
+    "baseUrl": "http://localhost:9000/api",
+    "auth": {
+      "method": "bearer",
+      "name": "Authorization"
+    }
+  },
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "x": "https://x.com/charlesozochuk1",
+    "github": "https://github.com/kingmariano/",
+    "linkedin": "https://www.linkedin.com/in/charles-ozochukwu-8bb4701b4/"
   }
 }

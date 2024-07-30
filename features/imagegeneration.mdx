@@ -1,0 +1,20 @@
+---
+title: 'Image Generation'
+description: 'Learn how to Generate **Stunning Images** using the Omnicron API'
+icon: 'image'
+---
+<Card title="Image Generations" icon="image">
+Omnicron utilizes [Replicate](https://replicate.com) to handle its image generation capabilities. They are only five super models selected to handle this; **[bytedance/sdxl-lightning-4step](https://replicate.com/bytedance/sdxl-lightning-4step)**, **[lucataco/realvisxl-v2.0](https://replicate.com/lucataco/realvisxl-v2.0)**,  **[playgroundai/playground-v2.5-1024px-aesthetic](https://replicate.com/playgroundai/playground-v2.5-1024px-aesthetic)**,  **[lucataco/dreamshaper-xl-turbo](https://replicate.com/lucataco/dreamshaper-xl-turbo)**,  **[lorenzomarines/astra](https://replicate.com/lorenzomarines/astra)**.
+<Note>Some models support image to image processing, while some do not.</Note>
+</Card>
+### How to use
+Navigate to the endpoint `api/v1/replicate/imagegeneration`.
+```sh curl
+curl -X POST http://localhost:9000/api/v1/replicate/imagegeneration?model=bytedance/sdxl-lightning-4step \
+  -H "Authorization: Bearer MY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+     "prompt": "A futuristic cityscape at sunset, with towering skyscrapers and flying cars"
+  }'
+```
+<Info>For details about the parameters, visit the [image generation reference page](/api-reference/endpoint/imagegeneration).</Info>
