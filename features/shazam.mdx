@@ -1,0 +1,19 @@
+---
+title: 'Song Recognition'
+description: 'Identify any song using the Shazam algorithm.'
+icon: 'magnifying-glass-music'
+---
+
+<Card title="Song Recognition" icon="magnifying-glass-music">
+  Omnicron leverages the powerful Shazam algorithm to provide accurate and efficient song recognition. Simply input a snippet of audio, and Omnicron will quickly identify the song.
+</Card>
+
+### How to use
+Navigate to the endpoint `api/v1/downloadvideo`.
+```sh curl
+curl -X POST http://localhost:9000/api/v1/convert2mp3 \
+  -H "Authorization: Bearer MY_API_KEY" \
+  -H "Content-Type: multipart/form-data" \
+  -f file: audio-snippet
+```
+<Info>For details about the parameters, visit the [song recognition reference page](/api-reference/endpoint/shazam).</Info>

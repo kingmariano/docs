@@ -1,0 +1,70 @@
+---
+title: 'Music Generation'
+sidebarTitle: 'v1/replicate/musicgeneration'
+api: 'POST v1/replicate/musicgeneration'
+contentType: 'multipart/form-data'
+authMethod: "bearer"
+description: "Music Generation using the **meta/musicgen** AI Model."
+---
+
+### Query
+<ParamField query="model" type="string" default="meta/musicgen" required>
+  The model to be used; 
+</ParamField>
+
+### Body
+<ParamField body="prompt" type="string" required>
+A description of the music you want to generate.
+</ParamField>
+
+<ParamField body="model_version" type="string" default="stereo-melody-large">
+Model to use for generation
+</ParamField>
+
+<ParamField body="input_audio" type="file">
+An audio file that will influence the generated music. If `continuation` is `True`, the generated music will be a continuation of the audio file. Otherwise, the generated music will mimic the audio file's melody.
+</ParamField>
+
+<ParamField body="duration" type="int" default="8">
+Duration of the generated audio in seconds.
+</ParamField>
+
+<ParamField body="continuation" type="bool" default="False">
+If `True`, generated music will continue from `input_audio`. Otherwise, generated music will mimic `input_audio`'s melody.
+</ParamField>
+
+<ParamField body="continuation_start" type="int" default="0">
+Start time of the audio file to use for continuation.
+</ParamField>
+
+<ParamField body="continuation_end" type="int" default="0">
+End time of the audio file to use for continuation. If -1 or None, will default to the end of the audio clip.
+</ParamField>
+
+<ParamField body="multi_band_diffusion" type="boolean" default="False">
+If `True`, the EnCodec tokens will be decoded with MultiBand Diffusion. Only works with non-stereo models.
+</ParamField>
+
+<ParamField body="normalization_strategy" type="string" default="peak">
+Strategy for normalizing audio.
+</ParamField>
+
+<ParamField body="top_k" type="int" default="250">
+Reduces sampling to the k most likely tokens.
+</ParamField>
+
+<ParamField body="top_p" type="float" default="0.0">
+Reduces sampling to tokens with cumulative probability of p. When set to `0` (default), top_k sampling is used.
+</ParamField>
+
+<ParamField body="temperature" type="float" default="1.0">
+Controls the 'conservativeness' of the sampling process. Higher temperature means more diversity.
+</ParamField>
+
+<ParamField body="classifier_free_guidance" type="int" default="3">
+Increases the influence of inputs on the output. Higher values produce lower-varience outputs that adhere more closely to inputs.
+</ParamField>
+
+<ParamField body="output_format" type="string" default="mp3">
+Output format for generated audio.
+</ParamField>

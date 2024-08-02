@@ -1,0 +1,27 @@
+---
+title: 'Text To Speech'
+sidebarTitle: 'v1/replicate/tts'
+api: 'POST v1/replicate/tts'
+contentType: 'multipart/form-data'
+authMethod: "bearer"
+description: "Text to speech using the **chenxwh/openvoice** AI Model."
+---
+
+### Query
+<ParamField query="model" type="string" default="chenxwh/openvoice" required>
+  The voice model to be used; 
+</ParamField>
+
+### Body
+<ParamField body="audio" type="file" required>
+Input reference audio
+</ParamField>
+<ParamField body="text" type="string" required>
+Input text
+</ParamField>
+<ParamField body="language" type="string" default="EN_NEWEST">
+The language of the audio to be generated
+</ParamField>
+<ParamField body="cleanup_voice" type="float" default="1">
+Set speed scale of the output audio
+</ParamField>

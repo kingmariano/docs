@@ -1,0 +1,19 @@
+---
+title: 'Speech To Text'
+description: 'Transcribe various audio formats to written text'
+icon: 'text'
+---
+
+<Card title="Speech To Text" icon="text">
+  Transcribe various audio formats to written text using advanced AI models powered by [Replicate](https://replicate.com), including **[openai/whisper](https://replicate.com/openai/whisper)** and **[turian/insanely-fast-whisper-with-video](https://replicate.com/turian/insanely-fast-whisper-with-video)**.
+  <Note>Model strength and output quality may vary. Check model reviews on Replicate.</Note>
+</Card>
+### How to use
+Navigate to the endpoint `/replicate/stt`.
+```sh curl
+curl -X POST http://localhost:9000//replicate/stt?model=openai/whisper \
+  -H "Authorization: Bearer MY_API_KEY" \
+  -H "Content-Type: multipart/form-data" \
+  -f audio: some-audio-input
+```
+<Info>For details about the parameters, visit the [text to speech reference page](/api-reference/endpoint/speechToText).</Info>

@@ -1,0 +1,57 @@
+---
+title: 'Video Generation'
+sidebarTitle: 'v1/replicate/videogeneration'
+api: 'POST v1/replicate/videogeneration'
+contentType: 'multipart/form-data'
+authMethod: "bearer"
+description: "Video Generation using the **anotherjesse/zeroscope-v2-xl** AI Model."
+---
+### Model
+- anotherjesse/zeroscope-v2-xl: https://replicate.com/anotherjesse/zeroscope-v2-xl
+
+### Query
+<ParamField query="model" type="string" default="anotherjesse/zeroscope-v2-xl" required>
+  The image model to be used; 
+</ParamField>
+
+### Body
+<ParamField body="prompt" type="string" required>
+  Input prompt 
+</ParamField>
+<ParamField body="negative_prompt" type="string" default="blurred, noisy, washed out, distorted, broken">
+  Factor to scale image by
+</ParamField>
+<ParamField body="init_weight" type="float" default="0.5">
+ URL of the initial video (optional)
+</ParamField>
+<ParamField body="num_frames" type="int" default="24">
+ Number of frames for the output video
+</ParamField>
+<ParamField body="num_inferences_steps" type="int" default="50">
+ Number of denoising steps
+</ParamField>
+<ParamField body="width" type="int" default="1024">
+Width of the output video
+</ParamField>
+<ParamField body="height" type="int" default="1024">
+Height of the output video
+</ParamField>
+
+<ParamField body="guidance_scale" type="float" default="17.5">
+Guidance scale
+</ParamField>
+
+<ParamField body="fps" type="int" default="10">
+fps for the output video
+</ParamField>
+
+<ParamField body="video_model" type="string" default="xl">
+Model to use
+</ParamField>
+
+<ParamField body="batch_size" type="int" default="1">
+Batch size
+</ParamField>
+<ParamField body="remove_watermark" type="boolean" default="false">
+Remove watermark
+</ParamField>

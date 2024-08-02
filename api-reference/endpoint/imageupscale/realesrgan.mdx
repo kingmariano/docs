@@ -1,0 +1,25 @@
+---
+title: 'Image Upscale'
+sidebarTitle: 'v1/replicate/imageupscale'
+api: 'POST v1/replicate/imageupscale'
+contentType: 'multipart/form-data'
+authMethod: "bearer"
+description: "Image upscaling using the **nightmareai/real-esrgan** AI Model."
+---
+
+### Query
+<ParamField query="model" type="string" default="nightmareai/real-esrgan" required>
+  The image model to be used; 
+</ParamField>
+
+### Body
+<ParamField body="image" type="file" required>
+  Input image 
+</ParamField>
+<ParamField body="scale" type="float" default="4.0">
+  Factor to scale image by
+</ParamField>
+<ParamField body="face_enhance" type="boolean" default="False">
+  Run GFPGAN face enhancement along with upscaling
+</ParamField>
+

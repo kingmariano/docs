@@ -1,0 +1,18 @@
+---
+title: 'Text To Speech'
+description: 'Generate quality audio output from text using different voice AI models'
+icon: 'volume'
+---
+<Card title="Text To Speech" icon="volume">
+ Convert Written Text to speech using different voice ai models powered by [Replicate](https://replicate.com), which includes  **[lucataco/xtts-v2](https://replicate.com/lucataco/xtts-v2)**, **[zsxkib/realistic-voice-cloning](https://replicate.com/zsxkib/realistic-voice-cloning)** and **[chenxwh/openvoice](https://replicate.com/chenxwh/openvoice)**.
+<Note>Models strength and output varies. check model review on replicate.</Note>
+</Card>
+### How to use
+Navigate to the endpoint `api/v1/replicate/tts`.
+```sh curl
+curl -X POST http://localhost:9000/api/v1/replicate/tts?model=lucataco/xtts-v2 \
+  -H "Authorization: Bearer MY_API_KEY" \
+  -H "Content-Type: multipart/form-data" \
+  -f text: the quick brown fox jumped over the lazy dog
+```
+<Info>For details about the parameters, visit the [text to speech reference page](/api-reference/endpoint/textToSpeech).</Info>

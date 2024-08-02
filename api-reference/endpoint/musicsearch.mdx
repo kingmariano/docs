@@ -1,0 +1,37 @@
+---
+title: 'Music Search'
+sidebarTitle: "v1/musicsearch"
+api: 'POST v1/musicsearch'
+authMethod: "bearer"
+description: "music search"
+---
+### Request Body
+<ParamField body="song" type="string" required>
+Song you want to search for
+</ParamField>
+
+<ParamField body="limit" type="string" default="5">
+Search Limit
+</ParamField>
+
+<ParamField body="proxy" type="string" >
+Proxy
+</ParamField>
+
+### Response
+
+<ResponseField name="song_name" type="string">
+Name of the song recognized.
+</ResponseField>
+<ResponseField name="shazam_url" type="string">
+Url to the song on shazam
+</ResponseField>
+<ResponseField name="song_image" type="string">
+Song cover image
+</ResponseField>
+
+<ResponseExample>
+```json response
+[{"song_name":"All of You - Davido","shazam_url":"https://www.shazam.com/track/91360961/all-of-you","song_image":"https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/38/6d/51/386d51f3-4a55-1930-59ae-743c403556fe/3487.jpg/400x400cc.jpg"},{"song_name":"All Of You - Stephanie Beatriz, Olga Merediz, John Leguizamo, Adassa, Maluma \u0026 Encanto - Cast","shazam_url":"https://www.shazam.com/track/591769919/all-of-you","song_image":"https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/94/4d/9a/944d9a8d-0549-f537-5706-5b083bd84a7d/21UM1IM38949.rgb.jpg/400x400cc.jpg"},{"song_name":"All of You - Sebastian Sternal","shazam_url":"https://www.shazam.com/track/340743865/all-of-you","song_image":"https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/85/09/bd/8509bd27-f393-0c3d-e957-c20407e2943c/705304464625_cover.jpg/400x400cc.jpg"},{"song_name":"All of You - Diana Ross","shazam_url":"https://www.shazam.com/track/2938180/all-of-you","song_image":"https://is1-ssl.mzstatic.com/image/thumb/Music4/v4/e1/b7/d4/e1b7d4d5-741f-fab7-f913-ca96e10788a9/5099968897758_1460x1460_300dpi.jpg/400x400cc.jpg"},{"song_name":"All of You - Duran Duran","shazam_url":"https://www.shazam.com/track/569197814/all-of-you","song_image":"https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/04/31/94/043194e2-01c8-e7f6-4870-817101ca6b73/4050538778960.jpg/400x400cc.jpg"}]
+```
+</ResponseExample>

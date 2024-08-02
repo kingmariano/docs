@@ -1,0 +1,86 @@
+---
+title: 'Text To Speech'
+sidebarTitle: 'v1/replicate/tts'
+api: 'POST v1/replicate/tts'
+contentType: 'multipart/form-data'
+authMethod: "bearer"
+description: "Text to speech using the **zsxkib/realistic-voice-cloning** AI Model."
+---
+
+### Query
+<ParamField query="model" type="string" default="zsxkib/realistic-voice-cloning" required>
+  The voice model to be used; 
+</ParamField>
+
+### Body
+<ParamField body="song_input" type="file" required>
+  Upload your audio file here.
+</ParamField>
+<ParamField body="rvc_model" type="string" default="Squidward">
+RVC model for a specific voice. If using a custom model, this should match the name of the downloaded model. If a 'custom_rvc_model_download_url' is provided, this will be automatically set to the name of the downloaded model.
+</ParamField>
+<ParamField body="custom_rvc_model_download_url" type="string">
+URL to download a custom RVC model. If provided, the model will be downloaded (if it doesn't already exist) and used for prediction, regardless of the 'rvc_model' value.
+</ParamField>
+<ParamField body="pitch_change" type="string" default="no-change">
+Adjust pitch of AI vocals. Options: `no-change`, `male-to-female`, `female-to-male`.
+</ParamField>
+<ParamField body="index_rate" type="float" default="0.5">
+Control how much of the AI's accent to leave in the vocals.
+</ParamField>
+
+<ParamField body="filter_raidus" type="int" default="3">
+If >=3: apply median filtering median filtering to the harvested pitch results.
+</ParamField>
+
+<ParamField body="rms_mix_rate" type="float" default="0.25">
+Control how much to use the original vocal's loudness (0) or a fixed loudness (1).
+</ParamField>
+
+<ParamField body="pitch_detection_algorithm" type="string" default="rmvpe">
+Best option is rmvpe (clarity in vocals), then mangio-crepe (smoother vocals).
+</ParamField>
+
+<ParamField body="crepe_hop_length" type="int" default="128">
+When `pitch_detection_algo` is set to `mangio-crepe`, this controls how often it checks for pitch changes in milliseconds. Lower values lead to longer conversions and higher risk of voice cracks, but better pitch accuracy.
+</ParamField>
+
+<ParamField body="protect" type="float" default="0.33">
+Control how much of the original vocals' breath and voiceless consonants to leave in the AI vocals. Set 0.5 to disable.
+</ParamField>
+
+<ParamField body="main_vocals_volume_change" type="float" default="10.0">
+Control volume of main AI vocals. Use -3 to decrease the volume by 3 decibels, or 3 to increase the volume by 3 decibels.
+</ParamField>
+
+<ParamField body="backup_vocals_volume_change" type="float" default="0.0">
+Control volume of backup AI vocals.
+</ParamField>
+
+<ParamField body="instrumental_volume_change" type="float" default="0.0">
+Control volume of the background music/instrumentals.
+</ParamField>
+
+<ParamField body="pitch_change_all" type="float" default="0.0">
+Change pitch/key of background music, backup vocals and AI vocals in semitones. Reduces sound quality slightly.
+</ParamField>
+
+<ParamField body="reverb_size" type="float" default="0.15">
+The larger the room, the longer the reverb time.
+</ParamField>
+
+<ParamField body="reverb_wetness" type="float" default="0.2">
+Level of AI vocals with reverb.
+</ParamField>
+
+<ParamField body="reverb_dryness" type="float" default="0.8">
+Level of AI vocals with reverb.
+</ParamField>
+
+<ParamField body="reverb_damping" type="float" default="0.7">
+Absorption of high frequencies in the reverb.
+</ParamField>
+
+<ParamField body="output_format" type="string" default="mp3">
+wav for best quality and large file size, mp3 for decent quality and small file size.
+</ParamField>

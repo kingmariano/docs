@@ -71,7 +71,16 @@
       "group": "Features",
       "pages": [
         "features/chatcompeletion",
-        "features/imagegeneration"
+        "features/imagegeneration",
+        "features/imageupscale",
+        "features/videogeneration",
+        "features/textTospeech",
+        "features/speechTotext",
+        "features/musicgeneration",
+        "features/downloadvideo",
+        "features/convertTomp3",
+        "features/shazam",
+        "features/musicdownload"
       ]
     },
     {
@@ -83,17 +92,62 @@
       "pages": [
         "api-reference/endpoint/groq",
         "api-reference/endpoint/g4f",
+        "api-reference/endpoint/videodownloader",
+        "api-reference/endpoint/convertTomp3",
+        "api-reference/endpoint/shazam",
+        "api-reference/endpoint/musicsearch",
+        "api-reference/endpoint/musicdownload",
         {
         "group": "Image Generation",
          "pages": [
-          "api-reference/endpoint/Imagegeneration/intro",
+          "api-reference/endpoint/imagegeneration/intro",
           "api-reference/endpoint/imagegeneration/bytedance",
           "api-reference/endpoint/imagegeneration/realvisxlv20",
           "api-reference/endpoint/imagegeneration/playgroundai",
           "api-reference/endpoint/imagegeneration/dreamshaper",
           "api-reference/endpoint/imagegeneration/astra"
         ]
+        },
+        {
+          "group": "Image Upscale",
+          "pages": [
+             "api-reference/endpoint/imageupscale/intro",
+             "api-reference/endpoint/imageupscale/realesrgan",
+             "api-reference/endpoint/imageupscale/clarityupscaler"
+          ]
+        },
+        {
+          "group": "Video Generation",
+          "pages": [
+            "api-reference/endpoint/videogeneration/zeroscope"
+          ]
+        },
+        {
+          "group": "Text To Speech",
+          "pages": [
+            "api-reference/endpoint/textToSpeech/intro",
+            "api-reference/endpoint/textToSpeech/xttsv2",
+            "api-reference/endpoint/textToSpeech/realisticvoiceclone",
+            "api-reference/endpoint/textToSpeech/openvoice"
+          ]
+        },
+        {
+          "group": "Speech To Text",
+          "pages": [
+            "api-reference/endpoint/speechToText/intro",
+            "api-reference/endpoint/speechToText/whisper",
+            "api-reference/endpoint/speechToText/fastwhisper"
+          ]
+        },
+        {
+          "group": "Music Generation",
+          "pages": [
+            "api-reference/endpoint/musicgeneration/intro",
+            "api-reference/endpoint/musicgeneration/riffusion",
+            "api-reference/endpoint/musicgeneration/metagen"
+          ]
         }
+
       ]
     },
     {

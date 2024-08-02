@@ -1,0 +1,32 @@
+---
+title: 'Text To Speech'
+sidebarTitle: 'v1/replicate/stt'
+api: 'POST v1/replicate/stt'
+contentType: 'multipart/form-data'
+authMethod: "bearer"
+description: "Speech To Text using the **openai/whisper** AI Model."
+---
+
+### Query
+<ParamField query="model" type="string" default="openai/whisper" required>
+  The  model to be used; 
+</ParamField>
+
+### Body
+<ParamField body="audio" type="file" required>
+Audio file
+</ParamField>
+<ParamField body="temperature" type="float" default="0.0">
+temperature to use for sampling
+</ParamField>
+<ParamField body="translate" type="boolean" default="False">
+Translate the text to English when set to True
+</ParamField>
+
+<ParamField body="initial_prompt" type="string" >
+optional text to provide as a prompt for the first window.
+</ParamField>
+
+<ParamField body="condition_on_previous_text" type="boolean" default="True">
+if True, provide the previous output of the model as a prompt for the next window; disabling may make the text inconsistent across windows, but the model becomes less prone to getting stuck in a failure loop.
+</ParamField>

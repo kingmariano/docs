@@ -1,0 +1,19 @@
+---
+title: 'Convert To MP3'
+description: 'Convert any audio or video format to MP3 with ease.'
+icon: 'file-mp3'
+---
+
+<Card title="Convert To MP3" icon="file-mp3">
+  MP3 is one of the most popular audio formats, known for its compatibility and efficient compression. Omnicron offers a seamless solution to convert any audio or video format to high-quality **MP3** files, ensuring convenience and versatility for your audio needs.
+</Card>
+
+### How to use
+Navigate to the endpoint `api/v1/downloadvideo`.
+```sh curl
+curl -X POST http://localhost:9000/api/v1/convert2mp3 \
+  -H "Authorization: Bearer MY_API_KEY" \
+  -H "Content-Type: multipart/form-data" \
+  -f file: input-audio-or-video-file
+```
+<Info>For details about the parameters, visit the [video downloader reference page](/api-reference/endpoint/convertTomp3).</Info>

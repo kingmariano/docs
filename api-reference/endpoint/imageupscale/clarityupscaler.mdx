@@ -1,0 +1,70 @@
+---
+title: 'Image Upscale'
+sidebarTitle: 'v1/replicate/imageupscale'
+api: 'POST v1/replicate/imageupscale'
+contentType: 'multipart/form-data'
+authMethod: "bearer"
+description: "Image upscaling using the **philz1337x/clarity-upscaler** AI Model."
+---
+
+### Query
+<ParamField query="model" type="string" default="philz1337x/clarity-upscaler" required>
+  The image model to be used; 
+</ParamField>
+
+### Body
+<ParamField body="image" type="file" required>
+  Input image 
+</ParamField>
+<ParamField body="prompt" type="string" default="masterpiece, best quality, highres, <lora:more_details:0.5> <lora:SDXLrender_v2.0:1>">
+ Prompt
+</ParamField>
+<ParamField body="negative_prompt" type="string" default="worst quality, low quality, normal quality:2 JuggernautNegative-neg">
+Negative Prompt
+</ParamField>
+<ParamField body="scale_factor" type="float" default="2.0">
+Scale factor
+</ParamField>
+<ParamField body="dynamic" type="float" default="6.0">
+HDR, try from 3 - 9
+</ParamField>
+<ParamField body="creativity" type="float" default="0.35">
+Creativity, try from 0.3 - 0.9
+</ParamField>
+<ParamField body="resemblance" type="float" default="0.6">
+Resemblance, try from 0.3 - 1.6
+</ParamField>
+<ParamField body="tiling_width" type="int" default="112">
+Fractality, set lower tile width for a high Fractality
+</ParamField>
+<ParamField body="tiling_height" type="int" default="114">
+Fractality, set lower tile height for a high Fractality
+</ParamField>
+<ParamField body="sd_model" type="string" default="uggernaut_reborn.safetensors [338b85bc4f]">
+Stable Diffusion model checkpoint
+</ParamField>
+
+<ParamField body="scheduler" type="string" default="DPM++ 3M SDE Karras">
+scheduler
+</ParamField>
+
+<ParamField body="num_inference_steps" type="int" default="18">
+Number of denoising steps
+</ParamField>
+
+<ParamField body="downscaling" type="boolean" default="false">
+Downscale the image before upscaling. Can improve quality and speed for images with high resolution but lower quality
+</ParamField>
+
+<ParamField body="downscaling_resolution" type="int" default="768">
+Downscaling resolution
+</ParamField>
+
+<ParamField body="sharpen" type="float" default="0.0">
+Sharpen the image after upscaling. The higher the value, the more sharpening is applied. 0 for no sharpening
+</ParamField>
+
+<ParamField body="output_format" type="string" default="png">
+Format of the output images
+</ParamField>
+

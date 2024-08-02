@@ -1,0 +1,50 @@
+---
+title: "Music Download"
+description: "Easily download any music to your device."
+icon: "cloud-music"
+---
+
+<Card title="Music Download" icon="cloud-music">
+  Downloading your favorite music has never been easier with Omnicron. Simply
+  search for the song by name and choose from the results to download the track
+  of your choice. Enjoy seamless and convenient music downloading directly to
+  your device.
+  <Info>
+    music search and music download endpoints are not the same, see below on how
+    to use.
+  </Info>
+</Card>
+
+### How to use
+
+<Steps>
+  <Step title="Using the music search endpoint">
+   Navigate to the endpoint `api/v1/musicsearch`.
+```sh curl
+curl -X POST http://localhost:9000/api/v1/musicsearch \
+  -H "Authorization: Bearer MY_API_KEY" \
+  -H "Content-Type: application/json" \
+ -d '{
+    "song": "all of you",
+    "limit": 5
+  }'
+```
+```json response
+[{"song_name":"All of You - Davido","shazam_url":"https://www.shazam.com/track/91360961/all-of-you","song_image":"https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/38/6d/51/386d51f3-4a55-1930-59ae-743c403556fe/3487.jpg/400x400cc.jpg"},{"song_name":"All Of You - Stephanie Beatriz, Olga Merediz, John Leguizamo, Adassa, Maluma \u0026 Encanto - Cast","shazam_url":"https://www.shazam.com/track/591769919/all-of-you","song_image":"https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/94/4d/9a/944d9a8d-0549-f537-5706-5b083bd84a7d/21UM1IM38949.rgb.jpg/400x400cc.jpg"},{"song_name":"All of You - Sebastian Sternal","shazam_url":"https://www.shazam.com/track/340743865/all-of-you","song_image":"https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/85/09/bd/8509bd27-f393-0c3d-e957-c20407e2943c/705304464625_cover.jpg/400x400cc.jpg"},{"song_name":"All of You - Diana Ross","shazam_url":"https://www.shazam.com/track/2938180/all-of-you","song_image":"https://is1-ssl.mzstatic.com/image/thumb/Music4/v4/e1/b7/d4/e1b7d4d5-741f-fab7-f913-ca96e10788a9/5099968897758_1460x1460_300dpi.jpg/400x400cc.jpg"},{"song_name":"All of You - Duran Duran","shazam_url":"https://www.shazam.com/track/569197814/all-of-you","song_image":"https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/04/31/94/043194e2-01c8-e7f6-4870-817101ca6b73/4050538778960.jpg/400x400cc.jpg"}]
+```
+<Info>For details about the parameters, visit the [music search reference page](/api-reference/endpoint/musicsearch).</Info>
+  </Step>
+  <Step title="Using the music download endpoint">
+    After using the music search endpoint. select the `song_name` you wish to download from the list of songs.
+```sh curl
+curl -X POST http://localhost:9000/api/v1/downloadmusic \
+  -H "Authorization: Bearer MY_API_KEY" \
+  -H "Content-Type: application/json" \
+ -d '{
+    "query": "All of You - Diana Ross"
+  }'
+```
+<Info>For details about the parameters, visit the [music download reference page](/api-reference/endpoint/musicdownload).</Info>
+  </Step>
+ </Steps>
+<Warning>Always use the music search endpoint before proceeding to download in order to achieve better result and accuracy.</Warning>

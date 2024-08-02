@@ -1,0 +1,21 @@
+---
+title: 'Music Generation'
+description: 'Generate quality and beautiful music effortlessly using advanced AI models.'
+icon: 'music'
+---
+<Card title="Music Generation" icon="music">
+  Experience the beauty of AI-generated music with Omnicron. Utilizing advanced models powered by Replicate, Omnicron offers exceptional music generation capabilities. Explore models like **[riffusion/riffusion](https://replicate.com/riffusion/riffusion)** and **[meta/musicgen](https://replicate.com/meta/musicgen)** for diverse and high-quality music outputs.
+  <Note>Model performance and output quality may vary. Check model reviews on Replicate for more details.</Note>
+</Card>
+
+### How to use
+Navigate to the endpoint `api/v1/replicate/musicgeneration`.
+```sh curl
+curl -X POST http://localhost:9000/api/v1/replicate/musicgeneration?model=riffusion/riffusion \
+  -H "Authorization: Bearer MY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+     "prompt_a": "funky synth solo"
+  }'
+```
+<Info>For details about the parameters, visit the [music generation reference page](/api-reference/endpoint/musicgeneration).</Info>

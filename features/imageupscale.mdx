@@ -1,0 +1,18 @@
+---
+title: 'Image Upscale'
+description: 'Discover how to enhance image resolution and quality effortlessly.'
+icon: 'sparkles'
+---
+<Card title="Image Upscaling" icon="sparkles">
+ Image upscaling is the process of enhancing the resolution and quality of an image, making it sharper and more detailed. Omnicron provides reliable and capable AI models powered by [Replicate](https://replicate.com). It offers the **[nightmareai/real-esrgan](https://replicate.com/nightmareai/real-esrgan)** and the **[philz1337x/clarity-upscaler](https://replicate.com/philz1337x/clarity-upscaler)** models for superior image enhancement.
+<Note>The two Models listed above have different strengths and abilities.</Note>
+</Card>
+### How to use
+Navigate to the endpoint `api/v1/replicate/imageupscale`.
+```sh curl
+curl -X POST http://localhost:9000/api/v1/replicate/imageupscale?model=nightmareai/real-esrgan \
+  -H "Authorization: Bearer MY_API_KEY" \
+  -H "Content-Type: multipart/form-data" \
+  -f file: some-file
+```
+<Info>For details about the parameters, visit the [image upscale reference page](/api-reference/endpoint/imageupscale).</Info>

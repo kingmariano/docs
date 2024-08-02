@@ -1,0 +1,38 @@
+---
+title: 'Music Generation'
+sidebarTitle: 'v1/replicate/musicgeneration'
+api: 'POST v1/replicate/musicgeneration'
+contentType: 'multipart/form-data'
+authMethod: "bearer"
+description: "Music Generation  using the **riffusion/riffusion** AI Model."
+---
+
+### Query
+<ParamField query="model" type="string" default="riffusion/riffusion" required>
+  The model to be used; 
+</ParamField>
+
+### Body
+<ParamField body="prompt_a" type="string" required>
+The prompt for your audio
+</ParamField>
+
+<ParamField body="denoising" type="float" default="0.75">
+How much to transform input spectrogram
+</ParamField>
+
+<ParamField body="prompt_b" type="string">
+The second prompt to interpolate with the first, leave blank if no interpolation
+</ParamField>
+
+<ParamField body="alpha" type="float" default="0.5">
+Interpolation alpha if using two prompts. A value of 0 uses prompt_a fully, a value of 1 uses prompt_b fully
+</ParamField>
+
+<ParamField body="num_inference_steps" type="int" default="50">
+Number of steps to run the diffusion model
+</ParamField>
+
+<ParamField body="seed_image_id" type="string" default="vibes">
+Seed spectrogram to use
+</ParamField>

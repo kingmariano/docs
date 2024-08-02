@@ -1,0 +1,22 @@
+---
+title: 'Video Downloader'
+description: 'Download videos from websites like YouTube, Vimeo, Instagram, and more, all for free.'
+icon: 'download'
+---
+
+<Card title="Video Downloader" icon="download">
+  Omnicron provides robust support for downloading videos from a wide range of websites, including **[YouTube](https://youtube.com)**, **[Vimeo](https://vimeo.com/)**, **[Instagram](https://www.instagram.com/)**, **[Twitter](https://twitter.com/)**, **[Pixivision](https://www.pixivision.net/)**, and **[MGTV](https://www.mgtv.com/)**.
+  <Warning>Ensure you comply with copyright laws and respect the terms of service of the respective websites when using the API.</Warning>
+</Card>
+
+### How to use
+Navigate to the endpoint `api/v1/downloadvideo`.
+```sh curl
+curl -X POST http://localhost:9000/api/v1/downloadvideo \
+  -H "Authorization: Bearer MY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=4s"
+  }'
+```
+<Info>For details about the parameters, visit the [video downloader reference page](/api-reference/endpoint/videodownloader).</Info>

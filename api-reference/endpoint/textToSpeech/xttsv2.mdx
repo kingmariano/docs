@@ -1,0 +1,27 @@
+---
+title: 'Text To Speech'
+sidebarTitle: 'v1/replicate/tts'
+api: 'POST v1/replicate/tts'
+contentType: 'multipart/form-data'
+authMethod: "bearer"
+description: "Text to speech using the **lucataco/xtts-v2** AI Model."
+---
+
+### Query
+<ParamField query="model" type="string" default="lucataco/xtts-v2" required>
+  The voice model to be used; 
+</ParamField>
+
+### Body
+<ParamField body="text" type="string" required>
+  Text to synthesize
+</ParamField>
+<ParamField body="speaker" type="file" required>
+  Original speaker audio (wav, mp3, m4a, ogg, or flv)
+</ParamField>
+<ParamField body="language" type="string" default="en">
+Output language for the synthesised speech
+</ParamField>
+<ParamField body="cleanup_voice" type="boolean" default="False">
+Whether to apply denoising to the speaker audio (microphone recordings)
+</ParamField>

@@ -1,0 +1,35 @@
+---
+title: 'Text To Speech'
+sidebarTitle: 'v1/replicate/stt'
+api: 'POST v1/replicate/stt'
+contentType: 'multipart/form-data'
+authMethod: "bearer"
+description: "Speech To Text using the **turian/insanely-fast-whisper-with-video** AI Model."
+---
+
+### Query
+<ParamField query="model" type="string" default="turian/insanely-fast-whisper-with-video" required>
+  The  model to be used; 
+</ParamField>
+
+### Body
+<ParamField body="audio" type="file" required>
+Audio file. Either this or url must be provided.
+</ParamField>
+<ParamField body="url" type="string">
+Video URL for yt-dlp to download the audio from. Either this or audio must be provided.
+</ParamField>
+
+<ParamField body="task" type="string" default="transcribe">
+Task to perform: transcribe or translate to another language. (default: transcribe).
+</ParamField>
+
+<ParamField body="batch_size" type="int" default="64">
+Number of parallel batches you want to compute. Reduce if you face OOMs. (default: 64).
+</ParamField>
+
+<ParamField body="timestamp" type="string" default="chunk">
+Whisper supports both chunked as well as word level timestamps. (default: chunk).
+</ParamField>
+
+

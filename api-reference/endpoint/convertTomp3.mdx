@@ -1,0 +1,30 @@
+---
+title: 'Convert To MP3'
+sidebarTitle: "v1/convert2mp3"
+api: 'POST v1/convert2mp3'
+authMethod: "bearer"
+contentType: 'multipart/form-data'
+description: "Convert any video or audio format to mp3"
+---
+
+### Request Body
+<ParamField body="file" type="file" >
+input audio or video vile
+</ParamField>
+
+<ParamField body="url" type="string" >
+Url to the video or audio specified. Either this or the file is required.
+</ParamField>
+
+### Response
+<ResponseField name="response" type="string">
+Direct Cloudinary Video URL.
+</ResponseField>
+
+<ResponseExample>
+```json response
+{
+  "response": "https://res.cloudinary/downloadedvideo.mp3"
+}
+```
+</ResponseExample>

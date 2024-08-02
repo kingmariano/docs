@@ -1,0 +1,28 @@
+---
+title: 'Video Downloader'
+sidebarTitle: "v1/downloadvideo"
+api: 'POST v1/downloadvideo'
+authMethod: "bearer"
+description: "Download online videos from various websites"
+---
+### Request Body
+<ParamField body="url" type="string" required>
+Url to the video specified
+</ParamField>
+
+<ParamField body="resolution" type="string" >
+This only applies for youtube videos with specified resolution of **1080p**, **720p**, **480p**, **360p**, **240p**.
+</ParamField>
+
+### Response
+<ResponseField name="response" type="string">
+Direct Cloudinary Video URL.
+</ResponseField>
+
+<ResponseExample>
+```json response
+{
+  "response": "https://res.cloudinary/downloadedvideo.mp4"
+}
+```
+</ResponseExample>
