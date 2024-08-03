@@ -1,0 +1,22 @@
+---
+title: 'YouTube Summarization'
+description: 'Summarize YouTube videos quickly and easily.'
+icon: 'youtube'
+---
+
+<Card title="YouTube Summarization" icon="youtube">
+  Omnicron provides a powerful tool to quickly and efficiently summarize YouTube videos. Simply input the video URL, and Omnicron will generate a concise summary, highlighting the key points and main content of the video. This feature is perfect for saving time and getting the essential information from lengthy videos.
+</Card>
+
+### How to use
+Navigate to the endpoint `api/v1/youtubesummarization`.
+```sh curl
+curl -X POST http://localhost:9000/api/v1/youtubesummarization \
+  -H "Authorization: Bearer MY_API_KEY" \
+  -H "Content-Type: application/json" \
+ -d '{
+    "url": "https://www.youtube.com/watch?v=rfscVS0vtbw&t=4s"
+
+  }'
+```
+<Info>For details about the parameters, visit the [youtube summarization reference page](/api-reference/endpoint/youtubesummarization).</Info>

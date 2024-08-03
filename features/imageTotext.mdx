@@ -1,0 +1,21 @@
+---
+title: 'Image To Text'
+description: 'Convert images to text effortlessly using advanced OCR technology.'
+icon: 'file'
+iconType: 'solid'
+---
+
+<Card title="Image To Text" icon="file">
+  Omnicron utilizes advanced Tesseract OCR technology to convert images to text with high accuracy. Simply upload an image, and Omnicron will extract and deliver the text content efficiently. Ideal for digitizing documents, extracting information from photos, and more.
+</Card>
+
+
+### How to use
+Navigate to the endpoint `api/v1/image2text`.
+```sh curl
+curl -X POST http://localhost:9000/api/v1/image2text \
+  -H "Authorization: Bearer MY_API_KEY" \
+  -H "Content-Type: multipart/form-data" \
+  -f file: image-file
+```
+<Info>For details about the parameters, visit the [Image To Text reference page](/api-reference/endpoint/imageTotext).</Info>

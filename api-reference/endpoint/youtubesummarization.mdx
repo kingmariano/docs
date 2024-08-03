@@ -1,0 +1,16 @@
+---
+title: 'Youtbe Summarization'
+sidebarTitle: "v1/youtubesummarization"
+api: 'POST v1/youtubesummarization'
+authMethod: "bearer"
+description: "Summarize YouTube videos quickly and easily."
+---
+### Request Body
+<ParamField body="url" type="string" required>
+Url to the youtube video specified
+</ParamField>
+
+### Response
+<ResponseField name="response" type="string">
+summary text
+</ResponseField>

@@ -11,7 +11,7 @@ icon: 'text'
 ### How to use
 Navigate to the endpoint `/replicate/stt`.
 ```sh curl
-curl -X POST http://localhost:9000//replicate/stt?model=openai/whisper \
+curl -X POST http://localhost:9000/api/v1/replicate/stt?model=openai/whisper \
   -H "Authorization: Bearer MY_API_KEY" \
   -H "Content-Type: multipart/form-data" \
   -f audio: some-audio-input

@@ -1,0 +1,17 @@
+---
+title: 'Image To Text'
+sidebarTitle: "v1/image2text"
+api: 'POST v1/image2text'
+authMethod: "bearer"
+contentType: 'multipart/form-data'
+description: "Convert Image to text using the tesseract ocr engine"
+---
+### Request Body
+<ParamField body="file" type="file" >
+image file to convert
+</ParamField>
+
+### Response
+<ResponseField name="text" type="string">
+scanned text
+</ResponseField>

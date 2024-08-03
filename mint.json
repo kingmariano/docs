@@ -27,12 +27,12 @@
       "url": "api-reference"
     },
     {
-      "name": "Contributing",
-      "url": "contributing"
+      "name": "SDKs",
+      "url": "sdks"
     },
     {
-      "name": "Integrations",
-      "url": "integrations"
+      "name": "Contributing",
+      "url": "contributing"
     }
   ],
   "anchors": [
@@ -80,7 +80,9 @@
         "features/downloadvideo",
         "features/convertTomp3",
         "features/shazam",
-        "features/musicdownload"
+        "features/musicdownload",
+        "features/youtubesummarization",
+        "features/imageTotext"
       ]
     },
     {
@@ -97,6 +99,8 @@
         "api-reference/endpoint/shazam",
         "api-reference/endpoint/musicsearch",
         "api-reference/endpoint/musicdownload",
+        "api-reference/endpoint/youtubesummarization",
+        "api-reference/endpoint/imageTotext",
         {
         "group": "Image Generation",
          "pages": [
@@ -155,8 +159,10 @@
       "pages": ["contributing/introduction"]
     },
     {
-      "group": "Integrations",
-      "pages": ["integrations/integrations"]
+      "group": "SDKs",
+      "pages": [
+        "sdks/golang"
+      ]
     }
   ],
   "feedback": {
